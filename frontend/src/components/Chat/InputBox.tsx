@@ -4,10 +4,9 @@ import { Send } from 'lucide-react'
 interface InputBoxProps {
   onSubmit: (message: string) => void
   disabled?: boolean
-  suggestions?: string[]
 }
 
-export function InputBox({ onSubmit, disabled = false, suggestions = [] }: InputBoxProps) {
+export function InputBox({ onSubmit, disabled = false }: InputBoxProps) {
   const [input, setInput] = useState('')
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -20,26 +19,8 @@ export function InputBox({ onSubmit, disabled = false, suggestions = [] }: Input
     }
   }
 
-  const handleSuggestion = (suggestion: string) => {
-    setInput(suggestion)
-    inputRef.current?.focus()
-  }
-
   return (
     <div className="border-t border-slate-700 p-4 bg-slate-900/50">
-      {suggestions.length > 0 && input === '' && (
-        <div className="mb-4 flex flex-wrap gap-2">
-          {suggestions.map((suggestion) => (
-            <button
-              key={suggestion}
-              onClick={() => handleSuggestion(suggestion)}
-              className="text-xs px-3 py-1.5 bg-gradient-to-r from-blue-900/50 to-purple-900/50 hover:from-blue-800 hover:to-purple-800 text-blue-300 rounded-full transition transform hover:scale-105 border border-blue-700/50"
-            >
-              {suggestion}
-            </button>
-          ))}
-        </div>
-      )}
 
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input

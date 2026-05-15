@@ -166,7 +166,6 @@ export function ChatWidget() {
           <InputBox
             onSubmit={handleSendMessage}
             disabled={isLoading || isBudgetExceeded}
-            suggestions={messages.length === 0 ? SUGGESTIONS : []}
           />
         </div>
       )}
