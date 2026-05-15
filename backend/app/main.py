@@ -6,7 +6,7 @@ from .config import settings
 from .services.vector_store import get_vector_store
 from .services.session_store import get_session_store
 from .services.rag_service import get_rag_service
-from .routers import chat, profile, static_assets
+from .routers import chat, profile, static_assets, availability
 
 # Initialize services
 vector_store = get_vector_store(settings.chroma_dir, settings.cv_path)
@@ -39,6 +39,7 @@ app.add_middleware(
 app.include_router(profile.router)
 app.include_router(chat.router)
 app.include_router(static_assets.router)
+app.include_router(availability.router)
 
 # Pass services to routers via dependency injection
 app.state.vector_store = vector_store
