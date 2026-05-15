@@ -90,6 +90,7 @@ export function Architecture() {
 
           {/* Arrows to data layer */}
           <path d="M 300 420 L 300 480" className="arch-arrow" />
+          <path d="M 580 460 L 350 480" className="arch-arrow" />
           <path d="M 600 460 L 550 480" className="arch-arrow" />
           <path d="M 680 420 L 750 480" className="arch-arrow" />
           <path d="M 900 420 L 950 480" className="arch-arrow" />
