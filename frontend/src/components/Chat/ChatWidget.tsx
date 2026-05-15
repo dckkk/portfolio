@@ -87,11 +87,17 @@ export function ChatWidget() {
   return (
     <>
       {/* Floating Chat Button with Tooltip */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
-        {/* Tooltip Label */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-2">
+        {/* Tooltip Label with Arrow */}
         {!isOpen && (
-          <div className="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium border border-slate-700 shadow-lg whitespace-nowrap">
-            Chat with Dicky's AI Assistant
+          <div className="relative">
+            <div className="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium border border-slate-700 shadow-lg whitespace-nowrap">
+              Chat with Dicky's AI Assistant
+              {/* Arrow pointing down */}
+              <div className="absolute bottom-0 right-6 transform translate-y-full">
+                <div className="border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-slate-900"></div>
+              </div>
+            </div>
           </div>
         )}
 
