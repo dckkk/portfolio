@@ -1,6 +1,7 @@
 import { Hero } from './components/Hero'
 import { Experience } from './components/Experience'
 import { Skills } from './components/Skills'
+import { Architecture } from './components/Architecture'
 import { ChatWidget } from './components/Chat'
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
             <a href="#skills" className="hover:text-blue-400 transition">
               Skills
             </a>
+            <a href="#architecture" className="hover:text-blue-400 transition">
+              Architecture
+            </a>
           </div>
         </div>
       </nav>
@@ -24,13 +28,17 @@ function App() {
       {/* Main Content */}
       <main>
         <Hero />
-        
+
         <div id="experience" className="bg-gray-50">
           <Experience />
         </div>
-        
+
         <div id="skills">
           <Skills />
+        </div>
+
+        <div id="architecture" className="bg-gray-50">
+          <Architecture />
         </div>
       </main>
 

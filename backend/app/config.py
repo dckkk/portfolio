@@ -15,8 +15,8 @@ class Settings(BaseSettings):
     github_username: str = "dckkk"
 
     chroma_dir: str = "./chroma_dir"
-    cv_path: str = "../CV_Dicky_Pratama_Senior_Software_Engineer.pdf"
-    photo_path: str = "../1539957873424.jpeg"
+    cv_path: str = "../../CV_Dicky_Pratama_Senior_Software_Engineer.pdf"
+    photo_path: str = "../../1539957873424.jpeg"
 
     allowed_origins: str = "http://localhost:3000,http://localhost:5173,https://dicky-portfolio.vercel.app"
 

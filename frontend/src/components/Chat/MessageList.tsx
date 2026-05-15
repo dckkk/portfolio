@@ -16,15 +16,11 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
   return (
     <div className="flex-1 overflow-y-auto p-4 space-y-4">
       {messages.length === 0 && !isLoading && (
-        <div className="h-full flex items-center justify-center text-center text-gray-500">
+        <div className="h-full flex items-center justify-center text-center text-slate-500">
           <div>
-            <h3 className="text-lg font-semibold mb-2">Start a Conversation</h3>
-            <p>Ask about Dicky's experience, projects, or availability</p>
-            <div className="mt-4 text-sm space-y-2">
-              <p>💡 Try: "Who is Dicky?"</p>
-              <p>💡 Try: "What's your Go experience?"</p>
-              <p>💡 Try: "When are you available?"</p>
-            </div>
+            <div className="text-4xl mb-3">💬</div>
+            <h3 className="text-lg font-semibold text-slate-400 mb-2">Start a Conversation</h3>
+            <p className="text-sm">Ask about Dicky's experience, projects, or skills</p>
           </div>
         </div>
       )}
@@ -32,22 +28,26 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
       {messages.map((msg, idx) => (
         <div
           key={idx}
-          className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+          className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-message-in`}
+          style={{ animationDelay: `${idx * 0.1}s` }}
         >
           <div
-            className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+            className={`max-w-xs lg:max-w-sm px-4 py-3 rounded-2xl ${
               msg.role === 'user'
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-200 text-gray-900'
+                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-br-none'
+                : 'bg-slate-700 text-slate-100 rounded-bl-none border border-slate-600'
             }`}
           >
-            <p className="text-sm whitespace-pre-wrap">{msg.content}</p>
+            <p className="text-sm leading-relaxed">{msg.content}</p>
             <p
               className={`text-xs mt-1 ${
-                msg.role === 'user' ? 'text-blue-100' : 'text-gray-500'
+                msg.role === 'user' ? 'text-blue-100' : 'text-slate-400'
               }`}
             >
-              {new Date(msg.timestamp || 0).toLocaleTimeString()}
+              {new Date(msg.timestamp || 0).toLocaleTimeString([], {
+                hour: '2-digit',
+                minute: '2-digit',
+              })}
             </p>
           </div>
         </div>
@@ -55,15 +55,15 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
 
       {isLoading && (
         <div className="flex justify-start">
-          <div className="bg-gray-200 text-gray-900 px-4 py-2 rounded-lg">
-            <div className="flex gap-1">
-              <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" />
+          <div className="bg-slate-700 text-slate-100 px-4 py-3 rounded-2xl rounded-bl-none border border-slate-600">
+            <div className="flex gap-2">
+              <div className="w-2 h-2 bg-slate-400 rounded-full animate-bounce" />
               <div
-                className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"
+                className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"
                 style={{ animationDelay: '0.1s' }}
               />
               <div
-                className="w-2 h-2 bg-gray-500 rounded-full animate-bounce"
+                className="w-2 h-2 bg-slate-400 rounded-full animate-bounce"
                 style={{ animationDelay: '0.2s' }}
               />
             </div>
@@ -72,6 +72,22 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
       )}
 
       <div ref={endRef} />
+
+      <style>{`
+        @keyframes message-in {
+          from {
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        .animate-message-in {
+          animation: message-in 0.3s ease-out forwards;
+        }
+      `}</style>
     </div>
   )
 }

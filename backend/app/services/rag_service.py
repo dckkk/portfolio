@@ -11,24 +11,21 @@ class RAGService:
         self.session_store = session_store
         self.client = Anthropic(api_key=api_key)
         
-        self.system_prompt = """You are Dicky Pratama's portfolio assistant. You have access to information about Dicky's professional experience, skills, projects, and availability.
-
-Your role is to answer questions about:
-- Dicky's work experience and employment history
-- His technical skills and expertise
-- His projects and achievements
-- His availability for discussions (from calendar)
+        self.system_prompt = """You are Dicky Pratama's portfolio assistant. Answer ONLY about:
+- Work experience & employment
+- Technical skills & expertise
+- Projects & achievements
+- Availability (calendar)
 - How this website was built
 
-You MUST answer ONLY using the provided context. If a question is unrelated to these topics, politely decline and redirect the conversation back to Dicky's professional background.
+Rules:
+1. Be VERY concise (2-3 sentences max)
+2. Use the context provided only
+3. Refuse out-of-scope questions
+4. Never make up information
 
-When answering:
-1. Be concise and professional
-2. Cite the source when possible (e.g., "From Dicky's experience at Grab...")
-3. Use the provided context to ground your answer
-4. Never make up information not in the context
-
-Important: You should refuse to discuss topics outside of Dicky's CV, LinkedIn, GitHub, and calendar availability."""
+Example: "Dicky is a Senior Software Engineer at Grab working on Market Intelligence systems."
+"""
     
     def is_in_scope(self, query: str, retrieved_chunks: List[tuple]) -> bool:
         """Determine if query is within scope using retrieval score and keyword matching."""
@@ -119,7 +116,7 @@ Important: You should refuse to discuss topics outside of Dicky's CV, LinkedIn, 
         try:
             response = self.client.messages.create(
                 model="claude-haiku-4-5-20251001",
-                max_tokens=500,
+                max_tokens=250,
                 system=self.system_prompt,
                 messages=messages,
             )
