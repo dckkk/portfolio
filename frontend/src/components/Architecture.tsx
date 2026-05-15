@@ -138,19 +138,19 @@ export function Architecture() {
             <text x="0" y="0" className="arch-text-title" textAnchor="start" fontSize="12">Legend:</text>
 
             <rect x="0" y="12" width="14" height="14" className="arch-box-user" rx="2" />
-            <text x="20" y="23" className="arch-text-small" textAnchor="start" fill="#60a5fa">User Layer</text>
+            <text x="30" y="23" className="arch-text-small" textAnchor="start" fill="#60a5fa">User Layer</text>
 
-            <rect x="120" y="12" width="14" height="14" className="arch-box" rx="2" />
-            <text x="140" y="23" className="arch-text-small" textAnchor="start" fill="#60a5fa">Frontend</text>
+            <rect x="140" y="12" width="14" height="14" className="arch-box" rx="2" />
+            <text x="170" y="23" className="arch-text-small" textAnchor="start" fill="#60a5fa">Frontend</text>
 
-            <rect x="240" y="12" width="14" height="14" className="arch-box-service" rx="2" />
-            <text x="260" y="23" className="arch-text-small" textAnchor="start" fill="#d946ef">Service</text>
+            <rect x="270" y="12" width="14" height="14" className="arch-box-service" rx="2" />
+            <text x="300" y="23" className="arch-text-small" textAnchor="start" fill="#d946ef">Service</text>
 
-            <rect x="340" y="12" width="14" height="14" className="arch-box-data" rx="2" />
-            <text x="360" y="23" className="arch-text-small" textAnchor="start" fill="#10b981">Data/Storage</text>
+            <rect x="390" y="12" width="14" height="14" className="arch-box-data" rx="2" />
+            <text x="420" y="23" className="arch-text-small" textAnchor="start" fill="#10b981">Data/Storage</text>
 
-            <rect x="520" y="12" width="14" height="14" className="arch-box-api" rx="2" />
-            <text x="540" y="23" className="arch-text-small" textAnchor="start" fill="#fb923c">External API</text>
+            <rect x="560" y="12" width="14" height="14" className="arch-box-api" rx="2" />
+            <text x="590" y="23" className="arch-text-small" textAnchor="start" fill="#fb923c">External API</text>
           </g>
         </svg>
       </div>
