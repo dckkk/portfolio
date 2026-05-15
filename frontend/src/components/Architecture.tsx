@@ -178,9 +178,9 @@ export function Architecture() {
           <h4 className="text-green-300 font-bold mb-3 text-lg">🔌 Integrations</h4>
           <ul className="text-sm text-slate-300 space-y-2">
             <li>• Anthropic Claude Haiku</li>
-            <li>• Google Calendar API</li>
-            <li>• GitHub API</li>
-            <li>• Vector embeddings</li>
+            <li>• Vector embeddings (MiniLM)</li>
+            <li>• PDF processing (PyPDF)</li>
+            <li>• Session management</li>
           </ul>
         </div>
       </div>

@@ -15,8 +15,7 @@ class RAGService:
 - Work experience & employment
 - Technical skills & expertise
 - Projects & achievements
-- Availability (calendar)
-- How this website was built
+- How this website was built & its tech stack
 
 Rules:
 1. Be VERY concise (2-3 sentences max)
@@ -30,7 +29,7 @@ Example: "Dicky is a Senior Software Engineer at Grab working on Market Intellig
     def is_in_scope(self, query: str, retrieved_chunks: List[tuple]) -> bool:
         """Determine if query is within scope using retrieval score and keyword matching."""
         # Check keyword match
-        scope_keywords = ["experience", "skill", "project", "dicky", "calendar", "available", "free", "busy", "github", "language", "tool", "technology", "company", "role", "education", "achievement", "built", "website"]
+        scope_keywords = ["experience", "skill", "project", "dicky", "language", "tool", "technology", "company", "role", "education", "achievement", "built", "website", "python", "go", "engineer", "grab"]
         query_lower = query.lower()
         
         has_keyword = any(keyword in query_lower for keyword in scope_keywords)

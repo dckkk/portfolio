@@ -26,10 +26,6 @@ class Settings(BaseSettings):
 
     calendar_timezone: str = "Asia/Jakarta"
 
-    google_oauth_client_id: str = ""
-    google_oauth_client_secret: str = ""
-    google_token_cache_path: str = "./.gcal_token.json"
-
     environment: str = "development"
 
     def get_allowed_origins(self) -> List[str]:
