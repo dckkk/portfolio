@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { MessageCircle, X, Send, Sparkles } from 'lucide-react'
+import { MessageCircle, X, Send } from 'lucide-react'
 import { apiClient } from '../../lib/api'
 import { ConversationMessage } from '../../types'
 import { MessageList } from './MessageList'
@@ -89,19 +89,19 @@ export function ChatWidget() {
       {/* Floating Chat Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 w-16 h-16 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 active:scale-95 z-40 flex items-center justify-center font-bold text-white ${
+        className={`fixed bottom-6 right-6 px-6 h-14 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 z-40 flex items-center justify-center font-bold text-white gap-2 ${
           isOpen
-            ? 'bg-red-600 hover:bg-red-700'
-            : 'bg-gradient-to-br from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 animate-bounce'
+            ? 'bg-red-600 hover:bg-red-700 w-14'
+            : 'bg-gradient-to-br from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
         }`}
       >
         {isOpen ? (
-          <X size={28} />
+          <X size={24} />
         ) : (
-          <div className="flex items-center gap-2">
-            <MessageCircle size={24} />
-            <Sparkles size={16} className="animate-spin" />
-          </div>
+          <>
+            <MessageCircle size={20} />
+            <span className="text-sm">Chat with AIBot</span>
+          </>
         )}
       </button>
 
@@ -110,11 +110,8 @@ export function ChatWidget() {
         <div className="fixed bottom-24 right-6 w-full max-w-md h-screen max-h-[600px] rounded-2xl shadow-2xl flex flex-col z-40 bg-gradient-to-b from-slate-900 to-slate-800 border border-slate-700 animate-slide-up">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4 rounded-t-2xl">
-            <div className="flex items-center gap-2 mb-2">
-              <Sparkles size={20} className="animate-spin" />
-              <h2 className="text-xl font-bold text-white">AI Assistant</h2>
-            </div>
-            <p className="text-sm text-blue-100">Powered by Claude Haiku + RAG</p>
+            <h2 className="text-xl font-bold text-white mb-2">AI Assistant</h2>
+            <p className="text-sm text-blue-100">Ask about Dicky's experience & skills</p>
           </div>
 
           {/* Info Section */}
