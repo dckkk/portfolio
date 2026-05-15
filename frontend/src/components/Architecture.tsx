@@ -13,15 +13,15 @@ export function Architecture() {
           {/* Define styles */}
           <defs>
             <style>{`
-              .arch-box { fill: #1e293b; stroke: #0ea5e9; stroke-width: 2; }
-              .arch-box-user { fill: #1e3a8a; stroke: #3b82f6; stroke-width: 2; }
-              .arch-box-api { fill: #7c2d12; stroke: #f97316; stroke-width: 2; }
-              .arch-box-service { fill: #2d1b4e; stroke: #a855f7; stroke-width: 2; }
-              .arch-box-data { fill: #1b3a2b; stroke: #10b981; stroke-width: 2; }
+              .arch-box { fill: #0f172a; stroke: #3b82f6; stroke-width: 2; }
+              .arch-box-user { fill: #0f172a; stroke: #3b82f6; stroke-width: 2; }
+              .arch-box-api { fill: #0f172a; stroke: #a855f7; stroke-width: 2; }
+              .arch-box-service { fill: #0f172a; stroke: #a855f7; stroke-width: 2; }
+              .arch-box-data { fill: #0f172a; stroke: #3b82f6; stroke-width: 2; }
               .arch-text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; }
               .arch-text-small { fill: #cbd5e1; font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
               .arch-text-title { fill: #60a5fa; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
-              .arch-arrow { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+              .arch-arrow { stroke: #475569; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
               .arch-label { fill: #94a3b8; font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; }
             `}</style>
             <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
