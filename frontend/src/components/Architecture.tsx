@@ -4,7 +4,8 @@ export function Architecture() {
       <h2 className="text-4xl font-black mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
         Architecture
       </h2>
-      <p className="text-slate-400 mb-12">End-to-end system design with RAG-powered AI assistant</p>
+      <p className="text-slate-400 mb-2">End-to-end system design with RAG-powered AI assistant</p>
+      <p className="text-sm text-blue-400 mb-12">This is the architecture used to build this website</p>
 
       {/* Mermaid Diagram */}
       <div className="bg-slate-900 border border-slate-700 rounded-lg p-8 mb-12 overflow-x-auto">
