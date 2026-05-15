@@ -90,48 +90,48 @@ export function Architecture() {
 
           {/* Arrows to data layer */}
           <path d="M 300 420 L 300 480" className="arch-arrow" />
-          <path d="M 580 460 L 350 480" className="arch-arrow" />
-          <path d="M 600 460 L 550 480" className="arch-arrow" />
-          <path d="M 680 420 L 750 480" className="arch-arrow" />
-          <path d="M 900 420 L 950 480" className="arch-arrow" />
+          <path d="M 580 460 L 230 480" className="arch-arrow" />
+          <path d="M 600 460 L 430 480" className="arch-arrow" />
+          <path d="M 680 460 L 630 480" className="arch-arrow" />
+          <path d="M 900 420 L 830 480" className="arch-arrow" />
 
           {/* Layer 5: Data & External Services */}
           {/* ChromaDB */}
-          <rect x="280" y="480" width="140" height="60" className="arch-box-data" rx="5" />
-          <text x="350" y="510" className="arch-text">ChromaDB</text>
-          <text x="350" y="528" className="arch-text-small">Vector Store</text>
+          <rect x="160" y="480" width="140" height="60" className="arch-box-data" rx="5" />
+          <text x="230" y="510" className="arch-text">ChromaDB</text>
+          <text x="230" y="528" className="arch-text-small">Vector Store</text>
 
           {/* CV Loader */}
-          <rect x="480" y="480" width="140" height="60" className="arch-box-data" rx="5" />
-          <text x="550" y="510" className="arch-text">CV Loader</text>
-          <text x="550" y="528" className="arch-text-small">PDF Parser</text>
+          <rect x="360" y="480" width="140" height="60" className="arch-box-data" rx="5" />
+          <text x="430" y="510" className="arch-text">CV Loader</text>
+          <text x="430" y="528" className="arch-text-small">PDF Parser</text>
 
           {/* MiniLM Embeddings */}
-          <rect x="680" y="480" width="140" height="60" className="arch-box-service" rx="5" />
-          <text x="750" y="510" className="arch-text">MiniLM</text>
-          <text x="750" y="528" className="arch-text-small">Embeddings</text>
+          <rect x="560" y="480" width="140" height="60" className="arch-box-service" rx="5" />
+          <text x="630" y="510" className="arch-text">MiniLM</text>
+          <text x="630" y="528" className="arch-text-small">Embeddings</text>
+
+          {/* Session Store */}
+          <rect x="680" y="480" width="140" height="60" className="arch-box-data" rx="5" />
+          <text x="750" y="505" className="arch-text">Session Store</text>
+          <text x="750" y="523" className="arch-text-small">Token Budget</text>
 
           {/* Google Calendar */}
-          <rect x="880" y="480" width="140" height="60" className="arch-box-api" rx="5" />
-          <text x="950" y="510" className="arch-text">Google API</text>
-          <text x="950" y="528" className="arch-text-small">Calendar Data</text>
+          <rect x="760" y="480" width="140" height="60" className="arch-box-api" rx="5" />
+          <text x="830" y="510" className="arch-text">Google API</text>
+          <text x="830" y="528" className="arch-text-small">Calendar Data</text>
 
           {/* Anthropic API - Below MiniLM */}
-          <rect x="680" y="590" width="140" height="50" className="arch-box-api" rx="5" />
-          <text x="750" y="615" className="arch-text">Anthropic API</text>
-          <text x="750" y="632" className="arch-text-small">Claude Haiku</text>
+          <rect x="560" y="590" width="140" height="50" className="arch-box-api" rx="5" />
+          <text x="630" y="615" className="arch-text">Anthropic API</text>
+          <text x="630" y="632" className="arch-text-small">Claude Haiku</text>
 
           {/* Arrow from MiniLM to Anthropic */}
-          <path d="M 750 540 L 750 590" className="arch-arrow" />
+          <path d="M 630 540 L 630 590" className="arch-arrow" />
 
-          {/* Session Management */}
-          <rect x="1000" y="320" width="140" height="60" className="arch-box-data" rx="5" />
-          <text x="1070" y="345" className="arch-text">Session Store</text>
-          <text x="1070" y="363" className="arch-text-small">Token Budget</text>
-
-          {/* Connect Session Manager to Chat */}
-          <path d="M 680 420 L 1000 360" className="arch-arrow" strokeDasharray="5,5" />
-          <text x="850" y="385" className="arch-label">Token Tracking</text>
+          {/* Connect RAG Service to Session Manager */}
+          <path d="M 680 420 L 750 480" className="arch-arrow" strokeDasharray="5,5" />
+          <text x="700" y="445" className="arch-label">Token Tracking</text>
 
           {/* Legend */}
           <g transform="translate(60, 720)">
