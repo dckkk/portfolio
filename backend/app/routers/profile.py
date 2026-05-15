@@ -13,7 +13,7 @@ async def get_profile() -> Dict[str, Any]:
         "location": "Jakarta, Indonesia",
         "email": "dickypratamss@gmail.com",
         "phone": "+6282258583938",
-        "summary": "Senior Software Engineer at Grab specializing in Market Intelligence, LLM-driven automation, and high-frequency data pipelines. Experienced in building scalable systems with Go, Python, and cloud technologies.",
+        "summary": "5+ years as Senior Software Engineer at Grab, specializing in FinTech & Payment Systems. Expert in building high-scale Market Intelligence platforms, LLM-driven automation systems, and real-time data pipelines. Skilled in Go, Python, and cloud infrastructure.",
         "photo_url": "/api/photo",
         "links": {
             "linkedin": "https://www.linkedin.com/in/dicky-pratama-585840119/",
