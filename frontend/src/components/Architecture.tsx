@@ -186,6 +186,13 @@ export function Architecture() {
         </div>
       </div>
 
+      {/* Coming Soon Note */}
+      <div className="border border-yellow-700/50 rounded-lg p-4 bg-yellow-900/20 mb-8">
+        <p className="text-sm text-yellow-300">
+          📅 <span className="font-semibold">Google Calendar Integration</span> - Coming soon to show real-time availability based on calendar events
+        </p>
+      </div>
+
       {/* RAG Flow Details */}
       <div className="border border-slate-700 rounded-lg p-6 bg-slate-800/50">
         <h3 className="text-lg font-bold text-blue-300 mb-4">RAG Query Flow</h3>
