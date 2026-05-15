@@ -118,37 +118,42 @@ export function Architecture() {
           {/* Arrows to Anthropic */}
           <path d="M 750 490 L 850 450" className="arch-arrow" />
 
-          {/* Anthropic API */}
-          <rect x="800" y="420" width="140" height="50" className="arch-box-api" rx="5" />
-          <text x="870" y="445" className="arch-text">Anthropic API</text>
-          <text x="870" y="462" className="arch-text-small">Claude Haiku</text>
-
           {/* Session Management */}
-          <rect x="1000" y="320" width="140" height="60" className="arch-box-data" rx="5" />
-          <text x="1070" y="345" className="arch-text">Session Store</text>
-          <text x="1070" y="363" className="arch-text-small">Token Budget</text>
+          <rect x="480" y="280" width="140" height="60" className="arch-box-data" rx="5" />
+          <text x="550" y="305" className="arch-text">Session Store</text>
+          <text x="550" y="323" className="arch-text-small">Token Budget</text>
 
           {/* Connect Session Manager to Chat */}
-          <path d="M 680 420 L 1000 360" className="arch-arrow" strokeDasharray="5,5" />
-          <text x="850" y="385" className="arch-label">Token Tracking</text>
+          <path d="M 600 340 L 600 380" className="arch-arrow" />
+          <text x="630" y="365" className="arch-label">Track Tokens</text>
+
+          {/* Anthropic API */}
+          <rect x="800" y="480" width="140" height="50" className="arch-box-api" rx="5" />
+          <text x="870" y="505" className="arch-text">Anthropic API</text>
+          <text x="870" y="522" className="arch-text-small">Claude Haiku</text>
+
+          {/* Connect RAG to Anthropic */}
+          <path d="M 680 460 L 800 505" className="arch-arrow" />
+          <text x="730" y="475" className="arch-label">Query</text>
 
           {/* Legend */}
           <g transform="translate(50, 650)">
-            <text x="0" y="0" className="arch-text" textAnchor="start">Legend:</text>
-            <rect x="0" y="10" width="20" height="20" className="arch-box-user" rx="2" />
-            <text x="30" y="25" className="arch-text-small" textAnchor="start">User Layer</text>
+            <text x="0" y="0" className="arch-text" textAnchor="start" fontSize="13">Legend:</text>
 
-            <rect x="150" y="10" width="20" height="20" className="arch-box" rx="2" />
-            <text x="180" y="25" className="arch-text-small" textAnchor="start">Frontend</text>
+            <rect x="0" y="15" width="16" height="16" className="arch-box-user" rx="2" />
+            <text x="22" y="28" className="arch-text-small" textAnchor="start">User</text>
 
-            <rect x="300" y="10" width="20" height="20" className="arch-box-service" rx="2" />
-            <text x="330" y="25" className="arch-text-small" textAnchor="start">Service Layer</text>
+            <rect x="80" y="15" width="16" height="16" className="arch-box" rx="2" />
+            <text x="102" y="28" className="arch-text-small" textAnchor="start">Frontend</text>
 
-            <rect x="500" y="10" width="20" height="20" className="arch-box-data" rx="2" />
-            <text x="530" y="25" className="arch-text-small" textAnchor="start">Data/Storage</text>
+            <rect x="180" y="15" width="16" height="16" className="arch-box-service" rx="2" />
+            <text x="202" y="28" className="arch-text-small" textAnchor="start">Service</text>
 
-            <rect x="700" y="10" width="20" height="20" className="arch-box-api" rx="2" />
-            <text x="730" y="25" className="arch-text-small" textAnchor="start">External APIs</text>
+            <rect x="280" y="15" width="16" height="16" className="arch-box-data" rx="2" />
+            <text x="302" y="28" className="arch-text-small" textAnchor="start">Data/Storage</text>
+
+            <rect x="440" y="15" width="16" height="16" className="arch-box-api" rx="2" />
+            <text x="462" y="28" className="arch-text-small" textAnchor="start">External API</text>
           </g>
         </svg>
       </div>
@@ -184,6 +189,13 @@ export function Architecture() {
             <li>• Session management</li>
           </ul>
         </div>
+      </div>
+
+      {/* Coming Soon Note */}
+      <div className="border border-yellow-700/50 rounded-lg p-4 bg-yellow-900/20 mb-8">
+        <p className="text-sm text-yellow-300">
+          📅 <span className="font-semibold">Google Calendar Integration</span> - Coming soon to show real-time availability based on calendar events
+        </p>
       </div>
 
       {/* RAG Flow Details */}
