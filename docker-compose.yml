@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: dicky-portfolio-backend
+    ports:
+      - "8000:8000"
+    environment:
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      GITHUB_USERNAME: dckkk
+      CHROMA_DIR: /app/chroma_db
+      CV_PATH: /app/CV_Dicky_Pratama_Senior_Software_Engineer.pdf
+      PHOTO_PATH: /app/1539957873424.jpeg
+      ALLOWED_ORIGINS: http://localhost:3000,http://frontend:3000
+      SESSION_TOKEN_BUDGET: 8000
+      CALENDAR_TIMEZONE: Asia/Jakarta
+      ENVIRONMENT: production
+    volumes:
+      - ./backend/chroma_db:/app/chroma_db
+      - ./CV_Dicky_Pratama_Senior_Software_Engineer.pdf:/app/CV_Dicky_Pratama_Senior_Software_Engineer.pdf:ro
+      - ./1539957873424.jpeg:/app/1539957873424.jpeg:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - portfolio-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: dicky-portfolio-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - portfolio-network
+    environment:
+      VITE_API_URL: http://backend:8000/api
+
+networks:
+  portfolio-network:
+    driver: bridge
