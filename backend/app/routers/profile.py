@@ -31,7 +31,7 @@ async def get_experience() -> List[Dict[str, Any]]:
             "position": "Senior Software Engineer",
             "period": "May 2021 – Present",
             "location": "Jakarta, Indonesia",
-            "description": "Market Intelligence team lead. Built LLM-driven automation systems generating ~12K hourly competitor insights using Claude agents. Led development of high-frequency data pipelines processing market data at scale.",
+            "description": "Led Market Intelligence team on key projects. Built LLM-driven automation systems generating ~12K hourly competitor insights using Claude agents. Architected and led development of high-frequency data pipelines processing market data at scale.",
             "technologies": ["Go", "Python", "Kafka", "Pinecone", "Claude", "Kubernetes"]
         },
         {
