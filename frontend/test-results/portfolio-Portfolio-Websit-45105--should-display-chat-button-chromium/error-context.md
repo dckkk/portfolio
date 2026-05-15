@@ -12,12 +12,11 @@
 # Error details
 
 ```
-Error: expect(received).toBeGreaterThan(expected)
+Error: Channel closed
+```
 
-Matcher error: received value must be a number or bigint
-
-Received has type:  object
-Received has value: Promise {}
+```
+Error: page.waitForLoadState: Test ended.
 ```
 
 # Page snapshot
@@ -151,91 +150,93 @@ Received has value: Promise {}
     - generic [ref=e146]:
       - heading "Architecture" [level=2] [ref=e147]
       - paragraph [ref=e148]: End-to-end system design with RAG-powered AI assistant
-      - img [ref=e150]:
-        - generic [ref=e151]: End-to-End Architecture Flow
-        - generic [ref=e153]: 👤 User Browser
-        - generic [ref=e154]: HTTP/HTTPS
-        - generic [ref=e156]: 🎨 React Frontend (Vite + TypeScript)
-        - generic [ref=e157]: Chat Widget | Profile | Skills | Experience
-        - generic [ref=e161]: Profile API
-        - generic [ref=e162]: Skills, Experience
-        - generic [ref=e164]: Chat API
-        - generic [ref=e165]: RAG Engine
-        - generic [ref=e167]: Availability API
-        - generic [ref=e168]: Google Calendar
-        - generic [ref=e170]: Profile Service
-        - generic [ref=e171]: JSON Data Store
-        - generic [ref=e173]: RAG Service
-        - generic [ref=e174]: Vector Search
-        - generic [ref=e175]: + Claude Haiku
-        - generic [ref=e177]: Calendar Service
-        - generic [ref=e178]: Google API
-        - generic [ref=e182]: ChromaDB
-        - generic [ref=e183]: Vector Store
-        - generic [ref=e185]: CV Loader
-        - generic [ref=e186]: PDF Parser
-        - generic [ref=e188]: MiniLM
-        - generic [ref=e189]: Embeddings
-        - generic [ref=e191]: Google API
-        - generic [ref=e192]: Calendar Data
-        - generic [ref=e195]: Anthropic API
-        - generic [ref=e196]: Claude Haiku
-        - generic [ref=e198]: Session Store
-        - generic [ref=e199]: Token Budget
-        - generic [ref=e201]: Token Tracking
-        - generic [ref=e202]:
-          - generic [ref=e203]: "Legend:"
-          - generic [ref=e205]: User Layer
-          - generic [ref=e207]: Frontend
-          - generic [ref=e209]: Service Layer
-          - generic [ref=e211]: Data/Storage
-          - generic [ref=e213]: External APIs
-      - generic [ref=e214]:
-        - generic [ref=e215]:
-          - heading "🎨 Frontend Stack" [level=4] [ref=e216]
-          - list [ref=e217]:
-            - listitem [ref=e218]: • React 18 + TypeScript
-            - listitem [ref=e219]: • Vite bundler
-            - listitem [ref=e220]: • Tailwind CSS
-            - listitem [ref=e221]: • Context API state
-        - generic [ref=e222]:
-          - heading "⚙️ Backend Stack" [level=4] [ref=e223]
-          - list [ref=e224]:
-            - listitem [ref=e225]: • FastAPI (Python)
-            - listitem [ref=e226]: • Langchain orchestration
-            - listitem [ref=e227]: • ChromaDB + MiniLM
-            - listitem [ref=e228]: • Session management
-        - generic [ref=e229]:
-          - heading "🔌 Integrations" [level=4] [ref=e230]
-          - list [ref=e231]:
-            - listitem [ref=e232]: • Anthropic Claude Haiku
-            - listitem [ref=e233]: • Vector embeddings (MiniLM)
-            - listitem [ref=e234]: • PDF processing (PyPDF)
-            - listitem [ref=e235]: • Session management
-      - generic [ref=e236]:
-        - heading "RAG Query Flow" [level=3] [ref=e237]
-        - generic [ref=e238]:
-          - generic [ref=e239]:
-            - generic [ref=e240]: 1. Query
-            - generic [ref=e241]: User question → Frontend sends to Chat API
-          - generic [ref=e242]:
-            - generic [ref=e243]: 2. Retrieve
-            - generic [ref=e244]: ChromaDB + MiniLM finds relevant CV chunks (semantic search)
-          - generic [ref=e245]:
-            - generic [ref=e246]: 3. Augment
-            - generic [ref=e247]: Context chunks added to Claude prompt + conversation history
-          - generic [ref=e248]:
-            - generic [ref=e249]: 4. Generate
-            - generic [ref=e250]: Claude Haiku generates concise answer (≤250 tokens)
-          - generic [ref=e251]:
-            - generic [ref=e252]: 5. Track
-            - generic [ref=e253]: Session store tracks tokens, enforces 8000 token budget
-  - contentinfo [ref=e254]:
-    - paragraph [ref=e256]: © 2026 Dicky Pratama. Built with React, Langchain, and Claude AI.
-  - button [ref=e257] [cursor=pointer]:
-    - generic [ref=e258]:
-      - img [ref=e259]
-      - img [ref=e261]
+      - paragraph [ref=e149]: This is the architecture used to build this website
+      - img [ref=e151]:
+        - generic [ref=e152]: End-to-End Architecture Flow
+        - generic [ref=e154]: 👤 User Browser
+        - generic [ref=e155]: HTTP/HTTPS
+        - generic [ref=e157]: 🎨 React Frontend (Vite + TypeScript)
+        - generic [ref=e158]: Chat Widget | Profile | Skills | Experience
+        - generic [ref=e162]: Profile API
+        - generic [ref=e163]: Skills, Experience
+        - generic [ref=e165]: Chat API
+        - generic [ref=e166]: RAG Engine
+        - generic [ref=e168]: Availability API
+        - generic [ref=e169]: Google Calendar
+        - generic [ref=e171]: Profile Service
+        - generic [ref=e172]: JSON Data Store
+        - generic [ref=e174]: RAG Service
+        - generic [ref=e175]: Vector Search
+        - generic [ref=e176]: + Claude Haiku
+        - generic [ref=e178]: Calendar Service
+        - generic [ref=e179]: Google API
+        - generic [ref=e185]: ChromaDB
+        - generic [ref=e186]: Vector Store
+        - generic [ref=e188]: CV Loader
+        - generic [ref=e189]: PDF Parser
+        - generic [ref=e191]: MiniLM
+        - generic [ref=e192]: Embeddings
+        - generic [ref=e194]: Google API
+        - generic [ref=e195]: Calendar Data
+        - generic [ref=e197]: Anthropic API
+        - generic [ref=e198]: Claude Haiku
+        - generic [ref=e200]: Session Store
+        - generic [ref=e201]: Token Budget
+        - generic [ref=e203]: Token Tracking
+        - generic [ref=e204]:
+          - generic [ref=e205]: "Legend:"
+          - generic [ref=e207]: User Layer
+          - generic [ref=e209]: Frontend
+          - generic [ref=e211]: Service
+          - generic [ref=e213]: Data/Storage
+          - generic [ref=e215]: External API
+      - generic [ref=e216]:
+        - generic [ref=e217]:
+          - heading "🎨 Frontend Stack" [level=4] [ref=e218]
+          - list [ref=e219]:
+            - listitem [ref=e220]: • React 18 + TypeScript
+            - listitem [ref=e221]: • Vite bundler
+            - listitem [ref=e222]: • Tailwind CSS
+            - listitem [ref=e223]: • Context API state
+        - generic [ref=e224]:
+          - heading "⚙️ Backend Stack" [level=4] [ref=e225]
+          - list [ref=e226]:
+            - listitem [ref=e227]: • FastAPI (Python)
+            - listitem [ref=e228]: • Langchain orchestration
+            - listitem [ref=e229]: • ChromaDB + MiniLM
+            - listitem [ref=e230]: • Session management
+        - generic [ref=e231]:
+          - heading "🔌 Integrations" [level=4] [ref=e232]
+          - list [ref=e233]:
+            - listitem [ref=e234]: • Anthropic Claude Haiku
+            - listitem [ref=e235]: • Vector embeddings (MiniLM)
+            - listitem [ref=e236]: • PDF processing (PyPDF)
+            - listitem [ref=e237]: • Session management
+      - paragraph [ref=e239]: 📅 Google Calendar Integration - Coming soon to show real-time availability based on calendar events
+      - generic [ref=e240]:
+        - heading "RAG Query Flow" [level=3] [ref=e241]
+        - generic [ref=e242]:
+          - generic [ref=e243]:
+            - generic [ref=e244]: 1. Query
+            - generic [ref=e245]: User question → Frontend sends to Chat API
+          - generic [ref=e246]:
+            - generic [ref=e247]: 2. Retrieve
+            - generic [ref=e248]: ChromaDB + MiniLM finds relevant CV chunks (semantic search)
+          - generic [ref=e249]:
+            - generic [ref=e250]: 3. Augment
+            - generic [ref=e251]: Context chunks added to Claude prompt + conversation history
+          - generic [ref=e252]:
+            - generic [ref=e253]: 4. Generate
+            - generic [ref=e254]: Claude Haiku generates concise answer (≤250 tokens)
+          - generic [ref=e255]:
+            - generic [ref=e256]: 5. Track
+            - generic [ref=e257]: Session store tracks tokens, enforces 8000 token budget
+  - contentinfo [ref=e258]:
+    - paragraph [ref=e260]: © 2026 Dicky Pratama. Built with React, Langchain, and Claude AI.
+  - generic [ref=e261]:
+    - generic [ref=e263]: Chat with Dicky's AI Assistant
+    - button [ref=e266] [cursor=pointer]:
+      - img [ref=e267]
 ```
 
 # Test source
@@ -247,7 +248,8 @@ Received has value: Promise {}
   4   |   test.beforeEach(async ({ page }) => {
   5   |     await page.goto('/')
   6   |     // Wait for content to load
-  7   |     await page.waitForLoadState('networkidle')
+> 7   |     await page.waitForLoadState('networkidle')
+      |                ^ Error: page.waitForLoadState: Test ended.
   8   |   })
   9   | 
   10  |   test.describe('Page Load', () => {
@@ -334,8 +336,7 @@ Received has value: Promise {}
   91  |       const chatButton = page.locator('[class*="fixed"][class*="bottom"]').first()
   92  |       // Chat widget should be visible
   93  |       const messageCircle = page.locator('svg').filter({ has: page.locator('path') })
-> 94  |       expect(messageCircle.count()).toBeGreaterThan(0)
-      |                                     ^ Error: expect(received).toBeGreaterThan(expected)
+  94  |       expect(messageCircle.count()).toBeGreaterThan(0)
   95  |     })
   96  | 
   97  |     test('should open chat widget on click', async ({ page }) => {
@@ -349,91 +350,4 @@ Received has value: Promise {}
   105 |         // Wait for chat window to open
   106 |         await page.waitForTimeout(500)
   107 |       }
-  108 |     })
-  109 | 
-  110 |     test('should allow typing in chat', async ({ page }) => {
-  111 |       // Open chat
-  112 |       const chatButton = page.locator('button').filter({ 
-  113 |         has: page.locator('svg') 
-  114 |       }).last()
-  115 |       
-  116 |       if (await chatButton.isVisible()) {
-  117 |         await chatButton.click()
-  118 |         await page.waitForTimeout(500)
-  119 |         
-  120 |         // Find input field
-  121 |         const input = page.locator('input[placeholder*="Ask"]').first()
-  122 |         if (await input.isVisible()) {
-  123 |           await input.fill('Who is Dicky?')
-  124 |           expect(await input.inputValue()).toContain('Dicky')
-  125 |         }
-  126 |       }
-  127 |     })
-  128 |   })
-  129 | 
-  130 |   test.describe('API Integration', () => {
-  131 |     test('should fetch profile data', async ({ page }) => {
-  132 |       // Check that profile was loaded via API
-  133 |       const name = page.locator('text=Dicky Pratama')
-  134 |       await expect(name).toBeVisible()
-  135 |     })
-  136 | 
-  137 |     test('should handle navigation links', async ({ page }) => {
-  138 |       const experienceLink = page.locator('a[href*="#experience"]')
-  139 |       if (await experienceLink.isVisible()) {
-  140 |         await experienceLink.click()
-  141 |         // Page should scroll to experience section
-  142 |         const experienceHeading = page.locator('text=Experience')
-  143 |         await expect(experienceHeading).toBeInViewport()
-  144 |       }
-  145 |     })
-  146 |   })
-  147 | 
-  148 |   test.describe('Responsive Design', () => {
-  149 |     test('should be responsive on mobile', async ({ browser }) => {
-  150 |       const context = await browser.createContext({
-  151 |         viewport: { width: 375, height: 667 },
-  152 |       })
-  153 |       const page = await context.newPage()
-  154 |       await page.goto('/')
-  155 |       await page.waitForLoadState('networkidle')
-  156 | 
-  157 |       // Check main content is visible
-  158 |       const heading = page.locator('h1')
-  159 |       await expect(heading).toBeVisible()
-  160 | 
-  161 |       await context.close()
-  162 |     })
-  163 | 
-  164 |     test('should be responsive on tablet', async ({ browser }) => {
-  165 |       const context = await browser.createContext({
-  166 |         viewport: { width: 768, height: 1024 },
-  167 |       })
-  168 |       const page = await context.newPage()
-  169 |       await page.goto('/')
-  170 |       await page.waitForLoadState('networkidle')
-  171 | 
-  172 |       const heading = page.locator('h1')
-  173 |       await expect(heading).toBeVisible()
-  174 | 
-  175 |       await context.close()
-  176 |     })
-  177 |   })
-  178 | })
-  179 | 
-  180 | test.describe('Chat Functionality (requires backend)', () => {
-  181 |   test.beforeEach(async ({ page }) => {
-  182 |     await page.goto('/')
-  183 |     await page.waitForLoadState('networkidle')
-  184 |   })
-  185 | 
-  186 |   test('chat should send message', async ({ page }) => {
-  187 |     // This test requires backend to be running
-  188 |     const chatButton = page.locator('button').filter({ 
-  189 |       has: page.locator('svg') 
-  190 |     }).last()
-  191 |     
-  192 |     if (await chatButton.isVisible()) {
-  193 |       await chatButton.click()
-  194 |       await page.waitForTimeout(500)
 ```

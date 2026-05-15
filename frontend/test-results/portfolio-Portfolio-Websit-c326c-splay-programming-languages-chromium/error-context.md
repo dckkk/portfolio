@@ -6,17 +6,13 @@
 
 # Test info
 
-- Name: portfolio.spec.ts >> Portfolio Website >> Chat Widget >> should open chat widget on click
-- Location: tests/portfolio.spec.ts:97:5
+- Name: portfolio.spec.ts >> Portfolio Website >> Skills Section >> should display programming languages
+- Location: tests/portfolio.spec.ts:82:5
 
 # Error details
 
 ```
 Error: Channel closed
-```
-
-```
-Error: page.waitForLoadState: Test ended.
 ```
 
 # Page snapshot
@@ -237,117 +233,4 @@ Error: page.waitForLoadState: Test ended.
     - generic [ref=e263]: Chat with Dicky's AI Assistant
     - button [ref=e266] [cursor=pointer]:
       - img [ref=e267]
-```
-
-# Test source
-
-```ts
-  1   | import { test, expect } from '@playwright/test'
-  2   | 
-  3   | test.describe('Portfolio Website', () => {
-  4   |   test.beforeEach(async ({ page }) => {
-  5   |     await page.goto('/')
-  6   |     // Wait for content to load
-> 7   |     await page.waitForLoadState('networkidle')
-      |                ^ Error: page.waitForLoadState: Test ended.
-  8   |   })
-  9   | 
-  10  |   test.describe('Page Load', () => {
-  11  |     test('should load the home page', async ({ page }) => {
-  12  |       expect(page.url()).toContain('localhost:5173')
-  13  |     })
-  14  | 
-  15  |     test('should have correct page title', async ({ page }) => {
-  16  |       await expect(page).toHaveTitle(/Dicky Pratama/)
-  17  |     })
-  18  | 
-  19  |     test('should render navigation', async ({ page }) => {
-  20  |       const nav = page.locator('nav')
-  21  |       await expect(nav).toBeVisible()
-  22  |     })
-  23  |   })
-  24  | 
-  25  |   test.describe('Hero Section', () => {
-  26  |     test('should display profile photo', async ({ page }) => {
-  27  |       const photo = page.locator('img').first()
-  28  |       await expect(photo).toBeVisible()
-  29  |       // Check image loaded
-  30  |       const src = await photo.getAttribute('src')
-  31  |       expect(src).toBeTruthy()
-  32  |     })
-  33  | 
-  34  |     test('should display profile name', async ({ page }) => {
-  35  |       const name = page.locator('h1')
-  36  |       await expect(name).toContainText(/Dicky/)
-  37  |     })
-  38  | 
-  39  |     test('should display job title', async ({ page }) => {
-  40  |       const title = page.locator('text=Senior Software Engineer')
-  41  |       await expect(title).toBeVisible()
-  42  |     })
-  43  | 
-  44  |     test('should have social links', async ({ page }) => {
-  45  |       const linkedinLink = page.locator('a[href*="linkedin"]')
-  46  |       const githubLink = page.locator('a[href*="github"]')
-  47  |       
-  48  |       await expect(linkedinLink).toBeVisible()
-  49  |       await expect(githubLink).toBeVisible()
-  50  |     })
-  51  |   })
-  52  | 
-  53  |   test.describe('Experience Section', () => {
-  54  |     test('should display experience section', async ({ page }) => {
-  55  |       const heading = page.locator('text=Experience')
-  56  |       await expect(heading).toBeVisible()
-  57  |     })
-  58  | 
-  59  |     test('should show company details', async ({ page }) => {
-  60  |       const company = page.locator('text=Grab')
-  61  |       await expect(company).toBeVisible()
-  62  |     })
-  63  | 
-  64  |     test('should display technologies', async ({ page }) => {
-  65  |       const tech = page.locator('text=Go').or(page.locator('text=Python'))
-  66  |       await expect(tech.first()).toBeVisible()
-  67  |     })
-  68  |   })
-  69  | 
-  70  |   test.describe('Skills Section', () => {
-  71  |     test('should display skills section', async ({ page }) => {
-  72  |       const heading = page.locator('text=Skills')
-  73  |       await expect(heading).toBeVisible()
-  74  |     })
-  75  | 
-  76  |     test('should show skill categories', async ({ page }) => {
-  77  |       await page.locator('text=Languages').scrollIntoViewIfNeeded()
-  78  |       const languages = page.locator('text=Languages')
-  79  |       await expect(languages).toBeVisible()
-  80  |     })
-  81  | 
-  82  |     test('should display programming languages', async ({ page }) => {
-  83  |       await page.locator('text=Languages').scrollIntoViewIfNeeded()
-  84  |       const go = page.locator('text=Go').first()
-  85  |       await expect(go).toBeVisible()
-  86  |     })
-  87  |   })
-  88  | 
-  89  |   test.describe('Chat Widget', () => {
-  90  |     test('should display chat button', async ({ page }) => {
-  91  |       const chatButton = page.locator('[class*="fixed"][class*="bottom"]').first()
-  92  |       // Chat widget should be visible
-  93  |       const messageCircle = page.locator('svg').filter({ has: page.locator('path') })
-  94  |       expect(messageCircle.count()).toBeGreaterThan(0)
-  95  |     })
-  96  | 
-  97  |     test('should open chat widget on click', async ({ page }) => {
-  98  |       // Find and click chat button
-  99  |       const chatButton = page.locator('button').filter({ 
-  100 |         has: page.locator('svg') 
-  101 |       }).last()
-  102 |       
-  103 |       if (await chatButton.isVisible()) {
-  104 |         await chatButton.click()
-  105 |         // Wait for chat window to open
-  106 |         await page.waitForTimeout(500)
-  107 |       }
 ```

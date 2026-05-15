@@ -13,16 +13,16 @@ export function Architecture() {
           {/* Define styles */}
           <defs>
             <style>{`
-              .arch-box { fill: #0f172a; stroke: #3b82f6; stroke-width: 2; }
-              .arch-box-user { fill: #0f172a; stroke: #3b82f6; stroke-width: 2; }
-              .arch-box-api { fill: #0f172a; stroke: #a855f7; stroke-width: 2; }
-              .arch-box-service { fill: #0f172a; stroke: #a855f7; stroke-width: 2; }
-              .arch-box-data { fill: #0f172a; stroke: #3b82f6; stroke-width: 2; }
-              .arch-text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; }
-              .arch-text-small { fill: #cbd5e1; font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
+              .arch-box { fill: #1e3a8a; stroke: #3b82f6; stroke-width: 2; }
+              .arch-box-user { fill: #1e40af; stroke: #60a5fa; stroke-width: 2; }
+              .arch-box-api { fill: #7c2d12; stroke: #fb923c; stroke-width: 2; }
+              .arch-box-service { fill: #4c1d95; stroke: #d946ef; stroke-width: 2; }
+              .arch-box-data { fill: #14532d; stroke: #10b981; stroke-width: 2; }
+              .arch-text { fill: #f1f5f9; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; }
+              .arch-text-small { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 11px; text-anchor: middle; }
               .arch-text-title { fill: #60a5fa; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
-              .arch-arrow { stroke: #475569; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
-              .arch-label { fill: #94a3b8; font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; }
+              .arch-arrow { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+              .arch-label { fill: #cbd5e1; font-family: Arial, sans-serif; font-size: 10px; text-anchor: middle; }
             `}</style>
             <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
               <polygon points="0 0, 10 3, 0 6" fill="#64748b" />
@@ -52,7 +52,7 @@ export function Architecture() {
 
           {/* Layer 3: Backend APIs */}
           {/* Profile API */}
-          <rect x="220" y="260" width="160" height="60" className="arch-box-api" rx="5" />
+          <rect x="220" y="260" width="160" height="60" className="arch-box-service" rx="5" />
           <text x="300" y="285" className="arch-text">Profile API</text>
           <text x="300" y="305" className="arch-text-small">Skills, Experience</text>
 
@@ -62,7 +62,7 @@ export function Architecture() {
           <text x="600" y="305" className="arch-text-small">RAG Engine</text>
 
           {/* Availability API */}
-          <rect x="820" y="260" width="160" height="60" className="arch-box-api" rx="5" />
+          <rect x="820" y="260" width="160" height="60" className="arch-box-service" rx="5" />
           <text x="900" y="285" className="arch-text">Availability API</text>
           <text x="900" y="305" className="arch-text-small">Google Calendar</text>
 
@@ -116,13 +116,13 @@ export function Architecture() {
           <text x="950" y="510" className="arch-text">Google API</text>
           <text x="950" y="528" className="arch-text-small">Calendar Data</text>
 
-          {/* Arrows to Anthropic */}
-          <path d="M 750 490 L 850 450" className="arch-arrow" />
+          {/* Anthropic API - Below MiniLM */}
+          <rect x="680" y="590" width="140" height="50" className="arch-box-api" rx="5" />
+          <text x="750" y="615" className="arch-text">Anthropic API</text>
+          <text x="750" y="632" className="arch-text-small">Claude Haiku</text>
 
-          {/* Anthropic API */}
-          <rect x="800" y="420" width="140" height="50" className="arch-box-api" rx="5" />
-          <text x="870" y="445" className="arch-text">Anthropic API</text>
-          <text x="870" y="462" className="arch-text-small">Claude Haiku</text>
+          {/* Arrow from MiniLM to Anthropic */}
+          <path d="M 750 540 L 750 590" className="arch-arrow" />
 
           {/* Session Management */}
           <rect x="1000" y="320" width="140" height="60" className="arch-box-data" rx="5" />
@@ -134,22 +134,23 @@ export function Architecture() {
           <text x="850" y="385" className="arch-label">Token Tracking</text>
 
           {/* Legend */}
-          <g transform="translate(50, 650)">
-            <text x="0" y="0" className="arch-text" textAnchor="start">Legend:</text>
-            <rect x="0" y="10" width="20" height="20" className="arch-box-user" rx="2" />
-            <text x="30" y="25" className="arch-text-small" textAnchor="start">User Layer</text>
+          <g transform="translate(60, 720)">
+            <text x="0" y="0" className="arch-text-title" textAnchor="start" fontSize="12">Legend:</text>
 
-            <rect x="150" y="10" width="20" height="20" className="arch-box" rx="2" />
-            <text x="180" y="25" className="arch-text-small" textAnchor="start">Frontend</text>
+            <rect x="0" y="12" width="14" height="14" className="arch-box-user" rx="2" />
+            <text x="20" y="23" className="arch-text-small" textAnchor="start" fill="#60a5fa">User Layer</text>
 
-            <rect x="300" y="10" width="20" height="20" className="arch-box-service" rx="2" />
-            <text x="330" y="25" className="arch-text-small" textAnchor="start">Service Layer</text>
+            <rect x="120" y="12" width="14" height="14" className="arch-box" rx="2" />
+            <text x="140" y="23" className="arch-text-small" textAnchor="start" fill="#60a5fa">Frontend</text>
 
-            <rect x="500" y="10" width="20" height="20" className="arch-box-data" rx="2" />
-            <text x="530" y="25" className="arch-text-small" textAnchor="start">Data/Storage</text>
+            <rect x="240" y="12" width="14" height="14" className="arch-box-service" rx="2" />
+            <text x="260" y="23" className="arch-text-small" textAnchor="start" fill="#d946ef">Service</text>
 
-            <rect x="700" y="10" width="20" height="20" className="arch-box-api" rx="2" />
-            <text x="730" y="25" className="arch-text-small" textAnchor="start">External APIs</text>
+            <rect x="340" y="12" width="14" height="14" className="arch-box-data" rx="2" />
+            <text x="360" y="23" className="arch-text-small" textAnchor="start" fill="#10b981">Data/Storage</text>
+
+            <rect x="520" y="12" width="14" height="14" className="arch-box-api" rx="2" />
+            <text x="540" y="23" className="arch-text-small" textAnchor="start" fill="#fb923c">External API</text>
           </g>
         </svg>
       </div>
