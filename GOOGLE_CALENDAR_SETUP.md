@@ -50,16 +50,23 @@ mv ~/Downloads/client_secret_*.json ~/Workspace/portfolio/backend/credentials.js
 ls -la ~/Workspace/portfolio/backend/credentials.json
 ```
 
-### 5. First Authentication
+### 5. First Authentication (One-Time Setup)
 
-The first time the backend runs with the credentials file:
+Run the setup script in the backend directory:
 
-1. Start the backend: `python -m uvicorn app.main:app --reload`
-2. When the calendar service initializes, it will open a browser
-3. Login with your Google account
-4. Grant permission to access calendar
-5. A token file (`.gcal_token.json`) will be saved automatically
-6. You're done! Calendar is now connected
+```bash
+cd ~/Workspace/portfolio/backend
+python3 setup_google_calendar.py
+```
+
+This script will:
+1. Check for `credentials.json`
+2. Open a browser for OAuth authentication
+3. Ask you to login with your Google account
+4. Ask for permission to access calendar
+5. Save token to `.gcal_token.json` automatically
+
+**That's it!** The token is reusable and will auto-refresh.
 
 ### 6. Verify It Works
 

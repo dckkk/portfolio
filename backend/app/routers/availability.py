@@ -13,33 +13,38 @@ async def get_availability(
     duration_minutes: int = 30
 ) -> Dict[str, Any]:
     """Get available time slots from Google Calendar."""
+    from pathlib import Path
     settings = request.app.state.settings
 
     start_date = datetime.now()
     end_date = start_date + timedelta(days=days)
 
-    # Try to use Google Calendar, fallback to mock if not configured
-    calendar_service = CalendarService(
-        token_path=settings.google_token_cache_path,
-        timezone=settings.calendar_timezone
-    )
+    # Check if credentials and token files exist (skip browser auth if not)
+    creds_file = Path("credentials.json")
+    token_file = Path(settings.google_token_cache_path)
 
-    # Attempt authentication and get real availability
-    if calendar_service.authenticate():
-        slots = calendar_service.get_availability(
-            start_date=start_date,
-            end_date=end_date,
-            duration_minutes=duration_minutes,
-            working_hours=(9, 18)
+    if creds_file.exists() and token_file.exists():
+        # Both files exist, try to use Google Calendar
+        calendar_service = CalendarService(
+            token_path=settings.google_token_cache_path,
+            timezone=settings.calendar_timezone
         )
 
-        return {
-            "timezone": settings.calendar_timezone,
-            "available_slots": slots,
-            "total_slots": len(slots),
-            "duration_minutes": duration_minutes,
-            "source": "google_calendar"
-        }
+        if calendar_service.authenticate():
+            slots = calendar_service.get_availability(
+                start_date=start_date,
+                end_date=end_date,
+                duration_minutes=duration_minutes,
+                working_hours=(9, 18)
+            )
+
+            return {
+                "timezone": settings.calendar_timezone,
+                "available_slots": slots,
+                "total_slots": len(slots),
+                "duration_minutes": duration_minutes,
+                "source": "google_calendar"
+            }
 
     # Fallback: Return mock availability if calendar not configured
     slots = []
