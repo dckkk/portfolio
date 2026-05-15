@@ -41,9 +41,14 @@ export function Hero() {
           <p className="text-2xl font-light text-blue-300 mb-2">
             {profile.title}
           </p>
-          <p className="text-lg text-slate-400">
-            📍 {profile.location}
-          </p>
+          <div className="space-y-2">
+            <p className="text-lg text-slate-400">
+              📍 {profile.location}
+            </p>
+            <p className="text-base text-blue-300 font-medium">
+              🌍 Open to relocation • Available for international opportunities
+            </p>
+          </div>
         </div>
 
         {/* CTA Buttons */}
