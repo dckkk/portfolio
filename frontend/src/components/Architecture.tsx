@@ -93,7 +93,7 @@ export function Architecture() {
           <path d="M 580 460 L 230 480" className="arch-arrow" />
           <path d="M 600 460 L 430 480" className="arch-arrow" />
           <path d="M 680 460 L 630 480" className="arch-arrow" />
-          <path d="M 900 420 L 830 480" className="arch-arrow" />
+          <path d="M 900 420 L 970 480" className="arch-arrow" />
 
           {/* Layer 5: Data & External Services */}
           {/* ChromaDB */}
@@ -112,14 +112,14 @@ export function Architecture() {
           <text x="630" y="528" className="arch-text-small">Embeddings</text>
 
           {/* Session Store */}
-          <rect x="680" y="480" width="140" height="60" className="arch-box-data" rx="5" />
-          <text x="750" y="505" className="arch-text">Session Store</text>
-          <text x="750" y="523" className="arch-text-small">Token Budget</text>
+          <rect x="760" y="480" width="140" height="60" className="arch-box-data" rx="5" />
+          <text x="830" y="505" className="arch-text">Session Store</text>
+          <text x="830" y="523" className="arch-text-small">Token Budget</text>
 
           {/* Google Calendar */}
-          <rect x="760" y="480" width="140" height="60" className="arch-box-api" rx="5" />
-          <text x="830" y="510" className="arch-text">Google API</text>
-          <text x="830" y="528" className="arch-text-small">Calendar Data</text>
+          <rect x="900" y="480" width="140" height="60" className="arch-box-api" rx="5" />
+          <text x="970" y="510" className="arch-text">Google API</text>
+          <text x="970" y="528" className="arch-text-small">Calendar Data</text>
 
           {/* Anthropic API - Below MiniLM */}
           <rect x="560" y="590" width="140" height="50" className="arch-box-api" rx="5" />
@@ -130,8 +130,8 @@ export function Architecture() {
           <path d="M 630 540 L 630 590" className="arch-arrow" />
 
           {/* Connect RAG Service to Session Manager */}
-          <path d="M 680 420 L 750 480" className="arch-arrow" strokeDasharray="5,5" />
-          <text x="700" y="445" className="arch-label">Token Tracking</text>
+          <path d="M 680 420 L 830 480" className="arch-arrow" strokeDasharray="5,5" />
+          <text x="745" y="445" className="arch-label">Token Tracking</text>
 
           {/* Legend */}
           <g transform="translate(60, 720)">
