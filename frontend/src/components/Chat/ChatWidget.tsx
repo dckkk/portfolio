@@ -86,32 +86,35 @@ export function ChatWidget() {
 
   return (
     <>
-      {/* Floating Chat Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-6 right-6 px-6 h-14 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 z-40 flex items-center justify-center font-bold text-white gap-2 ${
-          isOpen
-            ? 'bg-red-600 hover:bg-red-700 w-14'
-            : 'bg-gradient-to-br from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
-        }`}
-      >
-        {isOpen ? (
-          <X size={24} />
-        ) : (
-          <>
-            <MessageCircle size={20} />
-            <span className="text-sm">Chat with AIBot</span>
-          </>
+      {/* Floating Chat Button with Tooltip */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+        {/* Tooltip Label */}
+        {!isOpen && (
+          <div className="bg-slate-900 text-white px-4 py-2 rounded-lg text-sm font-medium border border-slate-700 shadow-lg whitespace-nowrap">
+            Chat with Dicky's AI Assistant
+          </div>
         )}
-      </button>
+
+        {/* Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={`w-14 h-14 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center font-bold text-white ${
+            isOpen
+              ? 'bg-red-600 hover:bg-red-700'
+              : 'bg-gradient-to-br from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700'
+          }`}
+        >
+          {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+        </button>
+      </div>
 
       {/* Chat Window */}
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-full max-w-md h-screen max-h-[600px] rounded-2xl shadow-2xl flex flex-col z-40 bg-gradient-to-b from-slate-900 to-slate-800 border border-slate-700 animate-slide-up">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4 rounded-t-2xl">
-            <h2 className="text-xl font-bold text-white mb-2">AI Assistant</h2>
-            <p className="text-sm text-blue-100">Ask about Dicky's experience & skills</p>
+            <h2 className="text-xl font-bold text-white mb-2">Dicky's AI Assistant</h2>
+            <p className="text-sm text-blue-100">Powered by Claude AI + RAG</p>
           </div>
 
           {/* Info Section */}
