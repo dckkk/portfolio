@@ -92,7 +92,7 @@ export function Architecture() {
           <path d="M 300 420 L 300 520" className="arch-arrow" />
           <path d="M 580 460 L 230 520" className="arch-arrow" />
           <path d="M 600 460 L 430 520" className="arch-arrow" />
-          <path d="M 680 460 L 680 520" className="arch-arrow" />
+          <path d="M 600 460 L 600 520" className="arch-arrow" />
           <path d="M 900 420 L 1020 520" className="arch-arrow" />
 
           {/* Layer 5: Data & External Services */}
